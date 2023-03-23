@@ -1,0 +1,27 @@
+name: mk_oncompleted_issue
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.4 <3.0.0'
+
+dependencies:
+  media_kit: ^0.0.1
+  media_kit_video: ^0.0.1
+  media_kit_libs_linux: ^1.0.0
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  assets:
+    - assets/ana_shorts.mp4
+    - assets/falling_man_shorts.mp4
+  uses-material-design: true
