@@ -30,16 +30,17 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
 
   Future<void> _initializePlayer() async {
     player = Player();
-    playCompletedSubscription = player.streams.isCompleted.listen((event) {
-      playCount++;
-      print('################################ Completed. PlayCount: $playCount');
-    });
     videoController = await VideoController.create(player.handle,
         enableHardwareAcceleration: false, width: 480, height: 854);
+    playCompletedSubscription = player.streams.isCompleted.listen((event) {
+      playCount++;
+      print('################################ Completed[$event]. PlayCount: $playCount');
+    });
     await player.open(Playlist(
         [
           Media('asset://assets/falling_man_shorts.mp4'),
-          Media('asset://assets/ana_shorts.mp4'),
+          Media('asset://assets/falling_man_shorts.mp4'),
+          Media('asset://assets/falling_man_shorts.mp4'),
           Media('asset://assets/falling_man_shorts.mp4'),
         ]
     ), play: true, evictCache: true);
